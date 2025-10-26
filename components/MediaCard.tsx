@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MediaItem } from '../types';
-import { IMG_W500_URL, NO_POSTER_URL } from '../constants';
+// FIX: Corrected import typo from NO_POSTER_URL to NO_POSTer_URL.
+import { IMG_W500_URL, NO_POSTer_URL } from '../constants';
 
 interface MediaCardProps {
     media: MediaItem | any; // Use any for MyList items which are a subset
@@ -11,7 +12,7 @@ interface MediaCardProps {
 const MediaCard: React.FC<MediaCardProps> = ({ media, onSelect, isGridItem = false }) => {
     const [imgLoaded, setImgLoaded] = useState(false);
     const title = media.title || media.name;
-    const posterPath = media.poster_path ? `${IMG_W500_URL}${media.poster_path}` : NO_POSTER_URL;
+    const posterPath = media.poster_path ? `${IMG_W500_URL}${media.poster_path}` : NO_POSTer_URL;
     
     const sizeClasses = isGridItem
         ? 'w-full'
@@ -34,7 +35,7 @@ const MediaCard: React.FC<MediaCardProps> = ({ media, onSelect, isGridItem = fal
                 onLoad={() => setImgLoaded(true)}
                 onError={(e) => {
                     (e.target as HTMLImageElement).onerror = null;
-                    (e.target as HTMLImageElement).src = NO_POSTER_URL;
+                    (e.target as HTMLImageElement).src = NO_POSTer_URL;
                 }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2 sm:p-3">

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { MediaItem, Credits, Videos, SeasonDetails } from '../types';
 import { getMediaDetails, getMediaCredits, getMediaVideos, getSimilarMedia, getSeasonDetails } from '../services/tmdbService';
-import { IMG_BASE_URL, NO_POSTER_URL, IMG_W500_URL } from '../constants';
+// FIX: Corrected import typo from NO_POSTER_URL to NO_POSTer_URL.
+import { IMG_BASE_URL, NO_POSTer_URL, IMG_W500_URL } from '../constants';
 import Loader from './Loader';
 import Carousel from './Carousel';
 import Player from './Player';
@@ -178,7 +179,7 @@ const DetailsModal: React.FC<DetailsModalProps> = ({ mediaId, mediaType, isOpen,
                             <div className="max-h-96 overflow-y-auto space-y-2 pr-2">
                                 {!seasonDetails ? <Loader /> : seasonDetails.episodes.map(ep => (
                                     <div key={ep.id} onClick={() => play({ season: ep.season_number, episode: ep.episode_number })} className="flex items-start gap-4 p-2 rounded-lg hover:bg-gray-800 cursor-pointer transition-colors">
-                                        <img src={ep.still_path ? `${IMG_W500_URL}${ep.still_path}` : NO_POSTER_URL} alt={ep.name} className="w-32 h-20 object-cover rounded-md flex-shrink-0" />
+                                        <img src={ep.still_path ? `${IMG_W500_URL}${ep.still_path}` : NO_POSTer_URL} alt={ep.name} className="w-32 h-20 object-cover rounded-md flex-shrink-0" />
                                         <div className="flex-1">
                                             <div className="flex justify-between items-center">
                                                 <h4 className="font-bold text-base">{ep.episode_number}. {ep.name}</h4>

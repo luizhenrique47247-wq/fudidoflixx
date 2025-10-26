@@ -2,7 +2,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Page, MatchState, Genre, MediaItem } from '../types';
 import { getMovieGenres, getTvGenres, getDiscoverMedia } from '../services/tmdbService';
 import Loader from '../components/Loader';
-import { IMG_W500_URL, NO_POSTER_URL } from '../constants';
+// FIX: Corrected import typo from NO_POSTER_URL to NO_POSTer_URL.
+import { IMG_W500_URL, NO_POSTer_URL } from '../constants';
 import Confetti from '../components/Confetti';
 import MediaCard from '../components/MediaCard';
 
@@ -238,7 +239,7 @@ const GameScreen: React.FC<{ state: MatchState, onDecision: (d: 'like' | 'pass')
                             onPointerUp={e => handleDragEnd(e, index)}
                             onPointerCancel={e => handleDragEnd(e, index)}
                         >
-                            <img src={item.poster_path ? `${IMG_W500_URL}${item.poster_path}` : NO_POSTER_URL} className="w-full h-full object-cover absolute inset-0" alt={item.title || item.name} />
+                            <img src={item.poster_path ? `${IMG_W500_URL}${item.poster_path}` : NO_POSTer_URL} className="w-full h-full object-cover absolute inset-0" alt={item.title || item.name} />
                             <div className="match-card-overlay"></div>
                             <div className="absolute bottom-0 left-0 p-6">
                                 <h3 className="text-3xl font-bold match-card-title">{item.title || item.name}</h3>
