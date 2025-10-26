@@ -138,23 +138,53 @@
         .match-action-button.like { background-color: #10B981; }
 
     </style>
-    <script type="importmap">
-    {
-      "imports": {
-        "react/": "https://aistudiocdn.com/react@^19.2.0/",
-        "react": "https://aistudiocdn.com/react@^19.2.0",
-        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-        "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client"
-      }
-    }
-    </script>
-    <!-- Add Babel for in-browser TSX transpilation -->
+    <!-- Load SystemJS module loader and Babel for in-browser transpilation -->
+    <script src="https://unpkg.com/systemjs@6.14.3/dist/s.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script>
+      // Configure SystemJS to use Babel for transpiling TSX files
+      System.set(System.resolve('plugin-babel'), {
+        "__useDefault": true,
+        "translate": function(load) {
+          var options = {
+            presets: ["react", "typescript"],
+            filename: load.address,
+            sourceMaps: "inline"
+          };
+          var output = Babel.transform(load.source, options);
+          load.source = output.code;
+        }
+      });
+
+      // Configure paths for React and tell SystemJS to use Babel for our files
+      System.config({
+        map: {
+          "react": "https://aistudiocdn.com/react@^19.2.0",
+          "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+        },
+        meta: {
+          '*.tsx': { loader: 'plugin-babel' },
+          '*.ts': { loader: 'plugin-babel' }
+        },
+        baseURL: './'
+      });
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
 </head>
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!-- Load the app's entry point and let Babel transpile it -->
-    <script type="text/babel" data-type="module" src="index.tsx"></script>
+    <!-- Load the app's entry point using SystemJS -->
+    <script>
+        System.import('./index.tsx').catch(function(err) { console.error(err); });
+    </script>
 </body>
 </html>
