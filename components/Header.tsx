@@ -24,8 +24,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onSearch, onTo
     const [isSearchActive, setIsSearchActive] = useState(false);
     const searchContainerRef = useRef<HTMLDivElement>(null);
     const searchInputRef = useRef<HTMLInputElement>(null);
-    // FIX: Changed `useRef<number>()` to `useRef<number | undefined>()` to make the type explicit for a ref that starts as undefined.
-    const searchTimeout = useRef<number | undefined>();
+    // FIX: Initialize useRef with null to provide an explicit initial value, which can prevent "Expected 1 arguments, but got 0" errors from some toolings.
+    const searchTimeout = useRef<number | null>(null);
 
     useEffect(() => {
         const handleScroll = () => {

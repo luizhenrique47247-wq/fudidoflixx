@@ -148,9 +148,13 @@
       }
     }
     </script>
+    <!-- Add Babel for in-browser TSX transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- Load the app's entry point and let Babel transpile it -->
+    <script type="text/babel" data-type="module" src="index.tsx"></script>
 </body>
 </html>

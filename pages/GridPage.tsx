@@ -43,7 +43,8 @@ const GridPage: React.FC<GridPageProps> = ({ type, onSelectMedia }) => {
     const [selectedGenre, setSelectedGenre] = useState('all');
     const [sortBy, setSortBy] = useState('popularity.desc');
 
-    const observer = useRef<IntersectionObserver>();
+    // FIX: Correctly type the IntersectionObserver ref to allow for a null initial value.
+    const observer = useRef<IntersectionObserver | null>(null);
     const lastElementRef = useCallback((node: HTMLDivElement) => {
         if (isLoading) return;
         if (observer.current) observer.current.disconnect();
