@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { MediaItem } from '../types';
-import { getDiscoverMedia, getAnimes, searchMediaByTitles } from '../services/tmdbService';
-import { OSCAR_WINNERS_LIST, EMMY_WINNERS_LIST } from '../constants';
-import Loader from '../components/Loader';
-import MediaCard from '../components/MediaCard';
+import { MediaItem } from '../types.ts';
+import { getDiscoverMedia, getAnimes, searchMediaByTitles } from '../services/tmdbService.ts';
+import { OSCAR_WINNERS_LIST, EMMY_WINNERS_LIST } from '../constants.ts';
+import Loader from '../components/Loader.tsx';
+import MediaCard from '../components/MediaCard.tsx';
 
 interface GridPageProps {
     type: 'movie' | 'tv' | 'animes';

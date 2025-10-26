@@ -1,7 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
-import { Genre, MediaItem } from '../types';
-import { getMovieGenres, getTvGenres, getRandomMedia } from '../services/tmdbService';
-import Loader from './Loader';
+import { Genre, MediaItem } from '../types.ts';
+import { getMovieGenres, getTvGenres, getRandomMedia } from '../services/tmdbService.ts';
+import Loader from './Loader.tsx';
 
 interface SurpriseMeModalProps {
     isOpen: boolean;

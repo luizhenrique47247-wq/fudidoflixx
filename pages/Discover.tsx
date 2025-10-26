@@ -1,10 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
-import { MediaItem } from '../types';
-import { fetchCarouselData, getDiscoverCarousel } from '../services/tmdbService';
-import Loader from '../components/Loader';
-import Carousel from '../components/Carousel';
-import { IMG_BASE_URL } from '../constants';
-import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import { MediaItem } from '../types.ts';
+import { fetchCarouselData, getDiscoverCarousel } from '../services/tmdbService.ts';
+import Loader from '../components/Loader.tsx';
+import Carousel from '../components/Carousel.tsx';
+import { IMG_BASE_URL } from '../constants.ts';
+import useIntersectionObserver from '../hooks/useIntersectionObserver.ts';
 
 interface DiscoverProps {
     onSelectMedia: (media: { id: number, type: 'movie' | 'tv' }) => void;

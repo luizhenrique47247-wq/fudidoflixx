@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect, useRef } from 'react';
-import { Page } from '../types';
+import { Page } from '../types.ts';
 
 interface HeaderProps {
     currentPage: Page;

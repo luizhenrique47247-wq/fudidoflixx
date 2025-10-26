@@ -1,11 +1,12 @@
+
 import React, { useState, useEffect, useMemo } from 'react';
-import { Page, MatchState, Genre, MediaItem } from '../types';
-import { getMovieGenres, getTvGenres, getDiscoverMedia } from '../services/tmdbService';
-import Loader from '../components/Loader';
+import { Page, MatchState, Genre, MediaItem } from '../types.ts';
+import { getMovieGenres, getTvGenres, getDiscoverMedia } from '../services/tmdbService.ts';
+import Loader from '../components/Loader.tsx';
 // FIX: Corrected import typo from NO_POSTER_URL to NO_POSTer_URL.
-import { IMG_W500_URL, NO_POSTer_URL } from '../constants';
-import Confetti from '../components/Confetti';
-import MediaCard from '../components/MediaCard';
+import { IMG_W500_URL, NO_POSTer_URL } from '../constants.ts';
+import Confetti from '../components/Confetti.tsx';
+import MediaCard from '../components/MediaCard.tsx';
 
 interface MatchGameProps {
     onNavigate: (page: Page) => void;

@@ -1,5 +1,6 @@
-import { API_KEY, API_BASE_URL } from '../constants';
-import { MediaItem, Credits, Videos, SeasonDetails, Genre } from '../types';
+
+import { API_KEY, API_BASE_URL } from '../constants.ts';
+import { MediaItem, Credits, Videos, SeasonDetails, Genre } from '../types.ts';
 
 interface ApiResponse<T> {
     results: T[];

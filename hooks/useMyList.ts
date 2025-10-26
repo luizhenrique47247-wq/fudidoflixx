@@ -1,6 +1,6 @@
 
 import { useState, useCallback, useEffect } from 'react';
-import { MediaItem } from '../types';
+import { MediaItem } from '../types.ts';
 
 type MyListItem = Pick<MediaItem, 'id' | 'title' | 'name' | 'poster_path' | 'media_type'>;
 

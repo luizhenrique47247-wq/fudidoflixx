@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
-import MediaCard from '../components/MediaCard';
-import { useMyList } from '../hooks/useMyList';
+import MediaCard from '../components/MediaCard.tsx';
+import { useMyList } from '../hooks/useMyList.ts';
 
 interface MyListProps {
     onSelectMedia: (media: { id: number, type: 'movie' | 'tv' }) => void;

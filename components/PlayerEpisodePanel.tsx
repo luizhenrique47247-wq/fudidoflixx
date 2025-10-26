@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
-import { Season, SeasonDetails } from '../types';
-import { getSeasonDetails } from '../services/tmdbService';
+import { Season, SeasonDetails } from '../types.ts';
+import { getSeasonDetails } from '../services/tmdbService.ts';
 // FIX: Corrected import typo from NO_POSTER_URL to NO_POSTer_URL.
-import { IMG_W500_URL, NO_POSTer_URL } from '../constants';
-import Loader from './Loader';
+import { IMG_W500_URL, NO_POSTer_URL } from '../constants.ts';
+import Loader from './Loader.tsx';
 
 interface PlayerEpisodePanelProps {
     isOpen: boolean;

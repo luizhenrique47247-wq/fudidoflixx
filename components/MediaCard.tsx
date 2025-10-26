@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
-import { MediaItem } from '../types';
+import { MediaItem } from '../types.ts';
 // FIX: Corrected import typo from NO_POSTER_URL to NO_POSTer_URL.
-import { IMG_W500_URL, NO_POSTer_URL } from '../constants';
+import { IMG_W500_URL, NO_POSTer_URL } from '../constants.ts';
 
 interface MediaCardProps {
     media: MediaItem | any; // Use any for MyList items which are a subset

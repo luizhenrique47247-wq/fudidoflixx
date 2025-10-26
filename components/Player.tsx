@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
-import { Season, SeasonDetails } from '../types';
-import PlayerEpisodePanel from './PlayerEpisodePanel';
+import { Season, SeasonDetails } from '../types.ts';
+import PlayerEpisodePanel from './PlayerEpisodePanel.tsx';
 
 interface PlayerProps {
     mediaId: number;

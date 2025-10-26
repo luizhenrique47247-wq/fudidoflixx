@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { MediaItem } from '../types';
-import { searchMedia } from '../services/tmdbService';
-import Loader from '../components/Loader';
-import MediaCard from '../components/MediaCard';
+import { MediaItem } from '../types.ts';
+import { searchMedia } from '../services/tmdbService.ts';
+import Loader from '../components/Loader.tsx';
+import MediaCard from '../components/MediaCard.tsx';
 
 interface SearchResultsProps {
     query: string;

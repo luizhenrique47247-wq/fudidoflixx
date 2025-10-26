@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
-import { MediaItem } from '../types';
-import MediaCard from './MediaCard';
+import { MediaItem } from '../types.ts';
+import MediaCard from './MediaCard.tsx';
 
 interface CarouselProps {
     title: string;

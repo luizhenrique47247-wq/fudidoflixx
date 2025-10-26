@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Page, RoletaItem } from '../types';
-import { searchMedia } from '../services/tmdbService';
-import { IMG_W500_URL } from '../constants';
-import Confetti from '../components/Confetti';
-import Loader from '../components/Loader';
+import { Page, RoletaItem } from '../types.ts';
+import { searchMedia } from '../services/tmdbService.ts';
+import { IMG_W500_URL } from '../constants.ts';
+import Confetti from '../components/Confetti.tsx';
+import Loader from '../components/Loader.tsx';
 
 interface RoletaGameProps {
     onNavigate: (page: Page) => void;

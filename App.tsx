@@ -1,17 +1,18 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
-import Header from './components/Header';
-import SplashScreen from './components/SplashScreen';
-import Discover from './pages/Discover';
-import GridPage from './pages/GridPage';
-import MyList from './pages/MyList';
-import Lucky from './pages/Lucky';
-import DetailsModal from './components/DetailsModal';
-import { Page } from './types';
-import SearchResults from './pages/SearchResults';
-import MobileNav from './components/MobileNav';
-import SurpriseMeModal from './components/SurpriseMeModal';
-import RoletaGame from './pages/RoletaGame';
-import MatchGame from './pages/MatchGame';
+import Header from './components/Header.tsx';
+import SplashScreen from './components/SplashScreen.tsx';
+import Discover from './pages/Discover.tsx';
+import GridPage from './pages/GridPage.tsx';
+import MyList from './pages/MyList.tsx';
+import Lucky from './pages/Lucky.tsx';
+import DetailsModal from './components/DetailsModal.tsx';
+import { Page } from './types.ts';
+import SearchResults from './pages/SearchResults.tsx';
+import MobileNav from './components/MobileNav.tsx';
+import SurpriseMeModal from './components/SurpriseMeModal.tsx';
+import RoletaGame from './pages/RoletaGame.tsx';
+import MatchGame from './pages/MatchGame.tsx';
 
 const App: React.FC = () => {
     const [showSplash, setShowSplash] = useState<boolean>(true);

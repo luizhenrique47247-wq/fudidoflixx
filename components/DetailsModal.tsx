@@ -1,12 +1,13 @@
+
 import React, { useState, useEffect } from 'react';
-import { MediaItem, Credits, Videos, SeasonDetails } from '../types';
-import { getMediaDetails, getMediaCredits, getMediaVideos, getSimilarMedia, getSeasonDetails } from '../services/tmdbService';
+import { MediaItem, Credits, Videos, SeasonDetails } from '../types.ts';
+import { getMediaDetails, getMediaCredits, getMediaVideos, getSimilarMedia, getSeasonDetails } from '../services/tmdbService.ts';
 // FIX: Corrected import typo from NO_POSTER_URL to NO_POSTer_URL.
-import { IMG_BASE_URL, NO_POSTer_URL, IMG_W500_URL } from '../constants';
-import Loader from './Loader';
-import Carousel from './Carousel';
-import Player from './Player';
-import { useMyList } from '../hooks/useMyList';
+import { IMG_BASE_URL, NO_POSTer_URL, IMG_W500_URL } from '../constants.ts';
+import Loader from './Loader.tsx';
+import Carousel from './Carousel.tsx';
+import Player from './Player.tsx';
+import { useMyList } from '../hooks/useMyList.ts';
 
 interface DetailsModalProps {
     mediaId: number;
