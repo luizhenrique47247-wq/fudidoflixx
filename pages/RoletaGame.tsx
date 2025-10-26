@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Page, RoletaItem } from '../types.ts';
 import { searchMedia } from '../services/tmdbService.ts';
@@ -65,10 +64,18 @@ const RoletaGame: React.FC<RoletaGameProps> = ({ onNavigate, onSelectMedia }) =>
         if (!canvas) return;
         const container = canvas.parentElement;
         if (!container) return;
-        const size = Math.min(container.clientWidth, 480);
-        canvas.width = size;
-        canvas.height = size;
-        drawWheel();
+
+        const handleResize = () => {
+            const size = Math.min(container.clientWidth, 480);
+            canvas.width = size;
+            canvas.height = size;
+            drawWheel();
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        
+        return () => window.removeEventListener('resize', handleResize);
     }, [drawWheel]);
 
     useEffect(() => {

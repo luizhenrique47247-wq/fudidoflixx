@@ -1,9 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { Season, SeasonDetails } from '../types.ts';
 import { getSeasonDetails } from '../services/tmdbService.ts';
-// FIX: Corrected import typo from NO_POSTER_URL to NO_POSTer_URL.
-import { IMG_W500_URL, NO_POSTer_URL } from '../constants.ts';
+import { IMG_W500_URL, NO_POSTER_URL } from '../constants.ts';
 import Loader from './Loader.tsx';
 
 interface PlayerEpisodePanelProps {
@@ -60,7 +58,7 @@ const PlayerEpisodePanel: React.FC<PlayerEpisodePanelProps> = ({ isOpen, onClose
                                     onClick={() => onSelectEpisode(ep.season_number, ep.episode_number)}
                                     className={`flex items-start gap-3 p-2 rounded-lg cursor-pointer ${ep.season_number === currentSeason && ep.episode_number === currentEpisode ? 'bg-netflix-red' : 'hover:bg-gray-800'}`}
                                 >
-                                    <img src={ep.still_path ? `${IMG_W500_URL}${ep.still_path}` : NO_POSTer_URL} alt={ep.name} className="w-28 object-cover rounded aspect-video flex-shrink-0" />
+                                    <img src={ep.still_path ? `${IMG_W500_URL}${ep.still_path}` : NO_POSTER_URL} alt={ep.name} className="w-28 object-cover rounded aspect-video flex-shrink-0" />
                                     <div>
                                         <h4 className="font-bold text-sm">{ep.episode_number}. {ep.name}</h4>
                                         <p className="text-xs text-gray-400 mt-1 line-clamp-2">{ep.overview}</p>
