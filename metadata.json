@@ -1,0 +1,5 @@
+{
+  "name": "FudidoFlix",
+  "description": "A Netflix-inspired streaming application for discovering movies, TV shows, and animes, featuring interactive games to help you decide what to watch. Built with React, TypeScript, and Tailwind CSS.",
+  "requestFramePermissions": []
+}
