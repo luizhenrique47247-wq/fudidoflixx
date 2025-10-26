@@ -13,7 +13,8 @@ interface GridPageProps {
 const movieFilters = [
     { name: 'Gêneros', value: 'all' }, { name: 'Ação', value: 'g-28' }, { name: 'Comédia', value: 'g-35' },
     { name: 'Documentário', value: 'g-99' }, { name: 'Drama', value: 'g-18' }, { name: 'Fantasia', value: 'g-14' },
-    { name: 'Ficção Científica', value: 'g-878' }, { name:- 'Suspense', value: 'g-53' }, { name: 'Terror', value: 'g-27' },
+    // FIX: Corrected a syntax error in the object property 'name'.
+    { name: 'Ficção Científica', value: 'g-878' }, { name: 'Suspense', value: 'g-53' }, { name: 'Terror', value: 'g-27' },
     { name: '──────────', value: 'sep1', disabled: true },
     { name: 'Brasileiros', value: 'c-BR' }, { name: 'Clássicos (até 1980)', value: 'rd-1980-12-31' },
     { name: 'Premiados (Oscar)', value: 'k-oscar-list' },

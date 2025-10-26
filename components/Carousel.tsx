@@ -36,7 +36,7 @@ const Carousel: React.FC<CarouselProps> = ({ title, items, onSelectMedia }) => {
                 </button>
                 <div
                     ref={carouselRef}
-                    className="carousel flex items-start space-x-3 md:space-x-4 overflow-x-auto py-2 -my-2"
+                    className="carousel flex items-start space-x-3 md:space-x-4 overflow-x-auto py-8"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {items.map((item, index) => (
